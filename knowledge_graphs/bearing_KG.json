@@ -1,0 +1,2676 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {
+    "name": "bearing_KG"
+  },
+  "nodes": [
+    {
+      "kind": "feature",
+      "name": "Mean",
+      "id": "F_0"
+    },
+    {
+      "kind": "feature",
+      "name": "Std",
+      "id": "F_1"
+    },
+    {
+      "kind": "feature",
+      "name": "Sq-Mean-of-Sqrt",
+      "id": "F_2"
+    },
+    {
+      "kind": "feature",
+      "name": "RMS",
+      "id": "F_3"
+    },
+    {
+      "kind": "feature",
+      "name": "Peak",
+      "id": "F_4"
+    },
+    {
+      "kind": "feature",
+      "name": "Skewness",
+      "id": "F_5"
+    },
+    {
+      "kind": "feature",
+      "name": "Kurtosis",
+      "id": "F_6"
+    },
+    {
+      "kind": "feature",
+      "name": "Waveform-Factor",
+      "id": "F_7"
+    },
+    {
+      "kind": "feature",
+      "name": "Peak-Factor",
+      "id": "F_8"
+    },
+    {
+      "kind": "feature",
+      "name": "Impulse-Factor",
+      "id": "F_9"
+    },
+    {
+      "kind": "feature",
+      "name": "Crest-Factor",
+      "id": "F_10"
+    },
+    {
+      "kind": "feature",
+      "name": "Freq-Mean",
+      "id": "F_11"
+    },
+    {
+      "kind": "feature",
+      "name": "Freq-Var",
+      "id": "F_12"
+    },
+    {
+      "kind": "feature",
+      "name": "Freq-Skewness",
+      "id": "F_13"
+    },
+    {
+      "kind": "feature",
+      "name": "Freq-Kurtosis",
+      "id": "F_14"
+    },
+    {
+      "kind": "feature",
+      "name": "Freq-Center",
+      "id": "F_15"
+    },
+    {
+      "kind": "feature",
+      "name": "Freq-RMS",
+      "id": "F_16"
+    },
+    {
+      "kind": "feature",
+      "name": "Freq-Std",
+      "id": "F_17"
+    },
+    {
+      "kind": "feature",
+      "name": "Freq-4th-RMS",
+      "id": "F_18"
+    },
+    {
+      "kind": "feature",
+      "name": "Freq-Shape-Factor",
+      "id": "F_19"
+    },
+    {
+      "kind": "feature",
+      "name": "Freq-Skew-Factor",
+      "id": "F_20"
+    },
+    {
+      "kind": "feature",
+      "name": "Freq-Skewness-2",
+      "id": "F_21"
+    },
+    {
+      "kind": "feature",
+      "name": "Freq-Kurtosis-2",
+      "id": "F_22"
+    },
+    {
+      "kind": "feature",
+      "name": "VMD-Energy-1",
+      "id": "F_23"
+    },
+    {
+      "kind": "feature",
+      "name": "VMD-Energy-2",
+      "id": "F_24"
+    },
+    {
+      "kind": "feature",
+      "name": "VMD-Energy-3",
+      "id": "F_25"
+    },
+    {
+      "kind": "feature",
+      "name": "VMD-Energy-4",
+      "id": "F_26"
+    },
+    {
+      "kind": "feature",
+      "name": "VMD-SVD-1",
+      "id": "F_27"
+    },
+    {
+      "kind": "feature",
+      "name": "VMD-SVD-2",
+      "id": "F_28"
+    },
+    {
+      "kind": "feature",
+      "name": "VMD-SVD-3",
+      "id": "F_29"
+    },
+    {
+      "kind": "feature",
+      "name": "VMD-SVD-4",
+      "id": "F_30"
+    },
+    {
+      "kind": "fault",
+      "name": "IR_007",
+      "id": "C_0"
+    },
+    {
+      "kind": "fault",
+      "name": "OR_007",
+      "id": "C_1"
+    },
+    {
+      "kind": "fault",
+      "name": "IR_014",
+      "id": "C_2"
+    },
+    {
+      "kind": "fault",
+      "name": "OR_014",
+      "id": "C_3"
+    },
+    {
+      "kind": "fault",
+      "name": "IR_021",
+      "id": "C_4"
+    },
+    {
+      "kind": "fault",
+      "name": "OR_021",
+      "id": "C_5"
+    },
+    {
+      "kind": "fault",
+      "name": "Normal",
+      "id": "C_6"
+    },
+    {
+      "kind": "fault",
+      "name": "B_007",
+      "id": "C_7"
+    },
+    {
+      "kind": "fault",
+      "name": "B_014",
+      "id": "C_8"
+    },
+    {
+      "kind": "fault",
+      "name": "B_021",
+      "id": "C_9"
+    }
+  ],
+  "links": [
+    {
+      "etype": "feature_fault",
+      "weight": 0.008448356988328819,
+      "source": "F_0",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.004444372900980111,
+      "source": "F_0",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.0038128052187387223,
+      "source": "F_0",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.0029589560144154046,
+      "source": "F_0",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.013291107432034571,
+      "source": "F_0",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.07204140319609051,
+      "source": "F_0",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.005629437935096542,
+      "source": "F_0",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.007136410438130433,
+      "source": "F_0",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.23138460061040927,
+      "source": "F_0",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.006655909922982144,
+      "source": "F_0",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.0328391966862708,
+      "source": "F_1",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.009884979736287436,
+      "source": "F_1",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.03457131664583919,
+      "source": "F_1",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.03315283812929901,
+      "source": "F_1",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.019016095009772013,
+      "source": "F_1",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.011409534379365732,
+      "source": "F_1",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.038647533505682244,
+      "source": "F_1",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.03786993551844133,
+      "source": "F_1",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.0206384283869751,
+      "source": "F_1",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.025341773840481325,
+      "source": "F_1",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02190037694403773,
+      "source": "F_2",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.01081166405881945,
+      "source": "F_2",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.029988191981622815,
+      "source": "F_2",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.020797544418773597,
+      "source": "F_2",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.013549438366745778,
+      "source": "F_2",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.0217967380094455,
+      "source": "F_2",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.022503870919606813,
+      "source": "F_2",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02153936991398537,
+      "source": "F_2",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.020500997079533647,
+      "source": "F_2",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.021915683569281922,
+      "source": "F_2",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.03296043966232479,
+      "source": "F_3",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.009823869461112742,
+      "source": "F_3",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.032619114160130594,
+      "source": "F_3",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.031687430847507976,
+      "source": "F_3",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.018942494016674295,
+      "source": "F_3",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.011383555110387836,
+      "source": "F_3",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.03891035655813861,
+      "source": "F_3",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.03835631046513156,
+      "source": "F_3",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02060170502874136,
+      "source": "F_3",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02509040522856563,
+      "source": "F_3",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.03438514550034993,
+      "source": "F_4",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.019997396376600734,
+      "source": "F_4",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.028686379660842084,
+      "source": "F_4",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02506522448765091,
+      "source": "F_4",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.019721545284405027,
+      "source": "F_4",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.007873342684981782,
+      "source": "F_4",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.05890534646744267,
+      "source": "F_4",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.05651879285583789,
+      "source": "F_4",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.017832154751015305,
+      "source": "F_4",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02533986079344488,
+      "source": "F_4",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.009228922142392309,
+      "source": "F_5",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.019620555708285095,
+      "source": "F_5",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.008961688850206831,
+      "source": "F_5",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.007374543550836319,
+      "source": "F_5",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.026916334960352655,
+      "source": "F_5",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.007328916562215184,
+      "source": "F_5",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.00321724766226954,
+      "source": "F_5",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.018693491275061792,
+      "source": "F_5",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.008051999015940262,
+      "source": "F_5",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02540549469241403,
+      "source": "F_5",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.07420548929920691,
+      "source": "F_6",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.0871358414950095,
+      "source": "F_6",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.009773899053595119,
+      "source": "F_6",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.013720583793855148,
+      "source": "F_6",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.04175540565789508,
+      "source": "F_6",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.009227654844990238,
+      "source": "F_6",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.047892993100623206,
+      "source": "F_6",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.10501114241174998,
+      "source": "F_6",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.008459730398214649,
+      "source": "F_6",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.022671272945137676,
+      "source": "F_6",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.012877040641256667,
+      "source": "F_7",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.027112919220449706,
+      "source": "F_7",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.009384005416672761,
+      "source": "F_7",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.00425245252344682,
+      "source": "F_7",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.018588727520591767,
+      "source": "F_7",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.009329031054633091,
+      "source": "F_7",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.006686663772963802,
+      "source": "F_7",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.013255496683149771,
+      "source": "F_7",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.006670708593138119,
+      "source": "F_7",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.009790469912862188,
+      "source": "F_7",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.025572670386256244,
+      "source": "F_8",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.04036078950961486,
+      "source": "F_8",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.013412787023294388,
+      "source": "F_8",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.009284651502885917,
+      "source": "F_8",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.032177081007434265,
+      "source": "F_8",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.008367520354178301,
+      "source": "F_8",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.0157848474205833,
+      "source": "F_8",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.03067054315643766,
+      "source": "F_8",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.010102548359118209,
+      "source": "F_8",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.017644573258655545,
+      "source": "F_8",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.0499601890297814,
+      "source": "F_9",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.04008960466665445,
+      "source": "F_9",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.013173717621228707,
+      "source": "F_9",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.016338597500924996,
+      "source": "F_9",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.04630458729597071,
+      "source": "F_9",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.011327211746984733,
+      "source": "F_9",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02272003612968824,
+      "source": "F_9",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.04777398725151541,
+      "source": "F_9",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.011986398018123555,
+      "source": "F_9",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.022484079111321293,
+      "source": "F_9",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02032989045889753,
+      "source": "F_10",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.036803798331909054,
+      "source": "F_10",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.011560856298662483,
+      "source": "F_10",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.007042980317580751,
+      "source": "F_10",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.026591658927674476,
+      "source": "F_10",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.00872989974552666,
+      "source": "F_10",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.011767213123925329,
+      "source": "F_10",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.023037292932740372,
+      "source": "F_10",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.008462684752370652,
+      "source": "F_10",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.01420482187538579,
+      "source": "F_10",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.021125341090376542,
+      "source": "F_11",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.012869893339534777,
+      "source": "F_11",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.027472016971369376,
+      "source": "F_11",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02772728726409356,
+      "source": "F_11",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02197365689919823,
+      "source": "F_11",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.01332437460831987,
+      "source": "F_11",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.07125211816851412,
+      "source": "F_11",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.061479782386258806,
+      "source": "F_11",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.021846837527886374,
+      "source": "F_11",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02487345746376618,
+      "source": "F_11",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.03988258630614218,
+      "source": "F_12",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.005942305931005674,
+      "source": "F_12",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.08188599713281361,
+      "source": "F_12",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.12942581257454477,
+      "source": "F_12",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.015414384485103088,
+      "source": "F_12",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.008223503788540233,
+      "source": "F_12",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.18390799924490608,
+      "source": "F_12",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.09844459755454278,
+      "source": "F_12",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.05918061718179934,
+      "source": "F_12",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.06437623249530508,
+      "source": "F_12",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.007899025602772995,
+      "source": "F_13",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.008858435107263227,
+      "source": "F_13",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.021706885030802075,
+      "source": "F_13",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.004187568511237384,
+      "source": "F_13",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.016691923746846467,
+      "source": "F_13",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02548692982528524,
+      "source": "F_13",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.00162642460609338,
+      "source": "F_13",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.004634749608141619,
+      "source": "F_13",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.015961835028619555,
+      "source": "F_13",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.01040262158034774,
+      "source": "F_13",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.013222239279953751,
+      "source": "F_14",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.01100757463174748,
+      "source": "F_14",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.030841968090159058,
+      "source": "F_14",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.005286838793756488,
+      "source": "F_14",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.018371994970781833,
+      "source": "F_14",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.05370777417747328,
+      "source": "F_14",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.0012865226521695037,
+      "source": "F_14",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.005072144526235539,
+      "source": "F_14",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.01827513646930207,
+      "source": "F_14",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.009371159661861311,
+      "source": "F_14",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.04207225921895635,
+      "source": "F_15",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.05796711401159512,
+      "source": "F_15",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.03538449912600644,
+      "source": "F_15",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.010921860252578356,
+      "source": "F_15",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.09677778167497708,
+      "source": "F_15",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.036214231482692184,
+      "source": "F_15",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.015529300799036683,
+      "source": "F_15",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.020785326188977833,
+      "source": "F_15",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02035809745213819,
+      "source": "F_15",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02151101399241123,
+      "source": "F_15",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.043691429241594006,
+      "source": "F_16",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.053734743275606386,
+      "source": "F_16",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.035247505733089,
+      "source": "F_16",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.01182078169756098,
+      "source": "F_16",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.09186653347026098,
+      "source": "F_16",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.035274910335555194,
+      "source": "F_16",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.009222494425420592,
+      "source": "F_16",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.021258041942536936,
+      "source": "F_16",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.024285904019351493,
+      "source": "F_16",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.025267021199529387,
+      "source": "F_16",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.022704874644525187,
+      "source": "F_17",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02559207157185518,
+      "source": "F_17",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.021097720901846008,
+      "source": "F_17",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.013340358819226381,
+      "source": "F_17",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02114066600893006,
+      "source": "F_17",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.022786742688391225,
+      "source": "F_17",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.01972215399105004,
+      "source": "F_17",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.027765347899124472,
+      "source": "F_17",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.019367499701051703,
+      "source": "F_17",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02986516027101865,
+      "source": "F_17",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.012339131202822753,
+      "source": "F_18",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.014448036233644103,
+      "source": "F_18",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02007176588445511,
+      "source": "F_18",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.007484648096020325,
+      "source": "F_18",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.019707010107469582,
+      "source": "F_18",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.016331416477532033,
+      "source": "F_18",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.0018358361496770964,
+      "source": "F_18",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.009210474557574247,
+      "source": "F_18",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.015286194314260464,
+      "source": "F_18",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.01909939426982386,
+      "source": "F_18",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.03912894231640391,
+      "source": "F_19",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.07256175906169991,
+      "source": "F_19",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.028141706612352487,
+      "source": "F_19",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.014346266393505282,
+      "source": "F_19",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.055311193293453416,
+      "source": "F_19",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.06191633208940579,
+      "source": "F_19",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.005027518523172604,
+      "source": "F_19",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.027714848597116547,
+      "source": "F_19",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.013461424962477563,
+      "source": "F_19",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.01730217196680677,
+      "source": "F_19",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.01633809476053191,
+      "source": "F_20",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.019050810738181177,
+      "source": "F_20",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.013865413789753743,
+      "source": "F_20",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.007275560094892619,
+      "source": "F_20",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.013975507644426257,
+      "source": "F_20",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.01693399042122657,
+      "source": "F_20",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.007497543247276304,
+      "source": "F_20",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.014161560099922473,
+      "source": "F_20",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.012524224296367598,
+      "source": "F_20",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02250386704016094,
+      "source": "F_20",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.05098712045831916,
+      "source": "F_21",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.07471373150685695,
+      "source": "F_21",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.04171448044233698,
+      "source": "F_21",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.015618452445190799,
+      "source": "F_21",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.07910588748134467,
+      "source": "F_21",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.08465579957575045,
+      "source": "F_21",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.0069840414029637855,
+      "source": "F_21",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.017441245769877767,
+      "source": "F_21",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.023868668782353778,
+      "source": "F_21",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.025232659396548424,
+      "source": "F_21",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.15199627312080874,
+      "source": "F_22",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.22178044558548135,
+      "source": "F_22",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.057388576700852144,
+      "source": "F_22",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.020165731712517954,
+      "source": "F_22",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.1492566080221083,
+      "source": "F_22",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.390086299550246,
+      "source": "F_22",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.004538672540454538,
+      "source": "F_22",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.029992319827520684,
+      "source": "F_22",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.04309337848500525,
+      "source": "F_22",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.057160826503402304,
+      "source": "F_22",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.029751571387713123,
+      "source": "F_23",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.0343001815345457,
+      "source": "F_23",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.047153604282743206,
+      "source": "F_23",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02173232854488737,
+      "source": "F_23",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.009090086684709894,
+      "source": "F_23",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.0077426255069752556,
+      "source": "F_23",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.01793249956531602,
+      "source": "F_23",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.07641939102111679,
+      "source": "F_23",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.04438167530950173,
+      "source": "F_23",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.15511632441348455,
+      "source": "F_23",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.06196755929171703,
+      "source": "F_24",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.008845875403134439,
+      "source": "F_24",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.04152072353046208,
+      "source": "F_24",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.2092338660523657,
+      "source": "F_24",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.018388703488339264,
+      "source": "F_24",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.004482020051600684,
+      "source": "F_24",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.028405687320382254,
+      "source": "F_24",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.056945261133549724,
+      "source": "F_24",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.11287516702113028,
+      "source": "F_24",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.08180912987444044,
+      "source": "F_24",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02263271951919914,
+      "source": "F_25",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.00881811788958187,
+      "source": "F_25",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.1255196724831936,
+      "source": "F_25",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.051503391099719006,
+      "source": "F_25",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.011352509134951876,
+      "source": "F_25",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.006032203943142621,
+      "source": "F_25",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.14197175874207915,
+      "source": "F_25",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.01650272334166189,
+      "source": "F_25",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.04851913964708625,
+      "source": "F_25",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.028920507372646957,
+      "source": "F_25",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.017663258635405105,
+      "source": "F_26",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.007422253705113003,
+      "source": "F_26",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.06985077209450279,
+      "source": "F_26",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.19395848772264315,
+      "source": "F_26",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.0182621787987757,
+      "source": "F_26",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.006584942546293406,
+      "source": "F_26",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.1574589804148022,
+      "source": "F_26",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.027120142663995084,
+      "source": "F_26",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.04489045368490442,
+      "source": "F_26",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.07874483091102225,
+      "source": "F_26",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.01312935009900897,
+      "source": "F_27",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.015255336985292937,
+      "source": "F_27",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.03154776690000438,
+      "source": "F_27",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.01882143553114596,
+      "source": "F_27",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02064438920607574,
+      "source": "F_27",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.010472256817486291,
+      "source": "F_27",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.014171353118471322,
+      "source": "F_27",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.01480802645625217,
+      "source": "F_27",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.017969718119162283,
+      "source": "F_27",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02243561092339201,
+      "source": "F_27",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.015180624352123322,
+      "source": "F_28",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.015568030990626775,
+      "source": "F_28",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.038418805191815286,
+      "source": "F_28",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.030182672575867417,
+      "source": "F_28",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.013661982215535384,
+      "source": "F_28",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.009186158641747398,
+      "source": "F_28",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.020670936118117177,
+      "source": "F_28",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.036063724435425985,
+      "source": "F_28",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02441188458758949,
+      "source": "F_28",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.022969028919627276,
+      "source": "F_28",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.032017860481557955,
+      "source": "F_29",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.00591941746584119,
+      "source": "F_29",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.014813189510436513,
+      "source": "F_29",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.016964235621402424,
+      "source": "F_29",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.021003501800265317,
+      "source": "F_29",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.005647668492999015,
+      "source": "F_29",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.014015542515569558,
+      "source": "F_29",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.012794079511473424,
+      "source": "F_29",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.0368742206630334,
+      "source": "F_29",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.04337812872322398,
+      "source": "F_29",
+      "target": "C_9"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02356202125096483,
+      "source": "F_30",
+      "target": "C_0"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.019258073565669442,
+      "source": "F_30",
+      "target": "C_1"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.020412167660172457,
+      "source": "F_30",
+      "target": "C_2"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.018326613109667197,
+      "source": "F_30",
+      "target": "C_3"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.01114902538689625,
+      "source": "F_30",
+      "target": "C_4"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.006095011290537664,
+      "source": "F_30",
+      "target": "C_5"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.004277069858507355,
+      "source": "F_30",
+      "target": "C_6"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.02152343957651367,
+      "source": "F_30",
+      "target": "C_7"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.017875967753398517,
+      "source": "F_30",
+      "target": "C_8"
+    },
+    {
+      "etype": "feature_fault",
+      "weight": 0.023116507870648315,
+      "source": "F_30",
+      "target": "C_9"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.9910802775024781,
+      "source": "C_0",
+      "target": "C_0"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_0",
+      "target": "C_1"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_0",
+      "target": "C_2"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_0",
+      "target": "C_3"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_0",
+      "target": "C_4"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_0",
+      "target": "C_5"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_0",
+      "target": "C_6"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_0",
+      "target": "C_7"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_0",
+      "target": "C_8"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_0",
+      "target": "C_9"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_1",
+      "target": "C_0"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.9910802775024781,
+      "source": "C_1",
+      "target": "C_1"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_1",
+      "target": "C_2"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_1",
+      "target": "C_3"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_1",
+      "target": "C_4"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_1",
+      "target": "C_5"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_1",
+      "target": "C_6"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_1",
+      "target": "C_7"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_1",
+      "target": "C_8"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_1",
+      "target": "C_9"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_2",
+      "target": "C_0"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_2",
+      "target": "C_1"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.9910802775024781,
+      "source": "C_2",
+      "target": "C_2"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_2",
+      "target": "C_3"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_2",
+      "target": "C_4"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_2",
+      "target": "C_5"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_2",
+      "target": "C_6"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_2",
+      "target": "C_7"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_2",
+      "target": "C_8"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_2",
+      "target": "C_9"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_3",
+      "target": "C_0"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_3",
+      "target": "C_1"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_3",
+      "target": "C_2"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.9910802775024781,
+      "source": "C_3",
+      "target": "C_3"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_3",
+      "target": "C_4"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_3",
+      "target": "C_5"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_3",
+      "target": "C_6"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_3",
+      "target": "C_7"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_3",
+      "target": "C_8"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_3",
+      "target": "C_9"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_4",
+      "target": "C_0"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_4",
+      "target": "C_1"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_4",
+      "target": "C_2"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_4",
+      "target": "C_3"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.9910802775024781,
+      "source": "C_4",
+      "target": "C_4"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_4",
+      "target": "C_5"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_4",
+      "target": "C_6"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_4",
+      "target": "C_7"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_4",
+      "target": "C_8"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_4",
+      "target": "C_9"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_5",
+      "target": "C_0"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_5",
+      "target": "C_1"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_5",
+      "target": "C_2"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_5",
+      "target": "C_3"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_5",
+      "target": "C_4"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.9910802775024781,
+      "source": "C_5",
+      "target": "C_5"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_5",
+      "target": "C_6"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_5",
+      "target": "C_7"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_5",
+      "target": "C_8"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_5",
+      "target": "C_9"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_6",
+      "target": "C_0"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_6",
+      "target": "C_1"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_6",
+      "target": "C_2"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_6",
+      "target": "C_3"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_6",
+      "target": "C_4"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_6",
+      "target": "C_5"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.9910802775024781,
+      "source": "C_6",
+      "target": "C_6"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_6",
+      "target": "C_7"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_6",
+      "target": "C_8"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_6",
+      "target": "C_9"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_7",
+      "target": "C_0"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_7",
+      "target": "C_1"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_7",
+      "target": "C_2"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_7",
+      "target": "C_3"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_7",
+      "target": "C_4"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_7",
+      "target": "C_5"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_7",
+      "target": "C_6"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.9910802775024781,
+      "source": "C_7",
+      "target": "C_7"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_7",
+      "target": "C_8"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.0009910802775024781,
+      "source": "C_7",
+      "target": "C_9"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.000991080277502478,
+      "source": "C_8",
+      "target": "C_0"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.000991080277502478,
+      "source": "C_8",
+      "target": "C_1"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.000991080277502478,
+      "source": "C_8",
+      "target": "C_2"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.000991080277502478,
+      "source": "C_8",
+      "target": "C_3"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.000991080277502478,
+      "source": "C_8",
+      "target": "C_4"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.000991080277502478,
+      "source": "C_8",
+      "target": "C_5"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.000991080277502478,
+      "source": "C_8",
+      "target": "C_6"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.000991080277502478,
+      "source": "C_8",
+      "target": "C_7"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.9910802775024778,
+      "source": "C_8",
+      "target": "C_8"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.000991080277502478,
+      "source": "C_8",
+      "target": "C_9"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.000991080277502478,
+      "source": "C_9",
+      "target": "C_0"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.000991080277502478,
+      "source": "C_9",
+      "target": "C_1"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.000991080277502478,
+      "source": "C_9",
+      "target": "C_2"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.000991080277502478,
+      "source": "C_9",
+      "target": "C_3"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.000991080277502478,
+      "source": "C_9",
+      "target": "C_4"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.000991080277502478,
+      "source": "C_9",
+      "target": "C_5"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.000991080277502478,
+      "source": "C_9",
+      "target": "C_6"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.000991080277502478,
+      "source": "C_9",
+      "target": "C_7"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.000991080277502478,
+      "source": "C_9",
+      "target": "C_8"
+    },
+    {
+      "etype": "fault_transition",
+      "prob": 0.9910802775024778,
+      "source": "C_9",
+      "target": "C_9"
+    }
+  ]
+}
