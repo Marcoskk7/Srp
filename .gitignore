@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# Data files (large, reproducible via preprocessing)
+*.npz
+*.npy
+*.mat
+*.h5
+*.hdf5
+
+# Model checkpoints & intermediate results
+*.pkl
+*.pth
+*.pt
+experiment_results/models/
+experiment_results/intermediate/
+
+# Experiment run results (JSON, reproducible via scripts)
+experiment_results/*.json
+
+# TensorBoard & training logs
+runs/
+*.log
+
+# Knowledge graph cached files
+knowledge_graphs/
+
+# IDE & editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# pytest
+.pytest_cache/
+
+# Claude Code local settings
+.claude/settings.local.json

@@ -335,9 +335,13 @@ class FinetuneTask(BaseTask):
     """Finetune任务 - 用于FTN方法"""
 
     def __init__(self, character_folders: list, support_num: int,
-                 seed: Optional[int] = None):
+                 seed: Optional[int] = None,
+                 aug_data: Optional[list] = None,
+                 augment_num: int = 0):
         super().__init__(character_folders, seed)
         self.support_num = support_num
+        self.aug_data = aug_data      # list[ndarray|None], one per class
+        self.augment_num = augment_num
         self.support_files = []
         self.query_files = []
         self.support_labels = []
@@ -348,23 +352,35 @@ class FinetuneTask(BaseTask):
         """构建支持集和查询集"""
         for class_idx, (data, label) in enumerate(self.character_folders):
             data = self._shuffle_data(data)
-            # 支持集/查询集划分
+            # 支持集：前 support_num 个真实样本
             self.support_files.extend(data[:self.support_num])
-            self.query_files.extend(data[self.support_num:])
-
             self.support_labels.extend([class_idx] * self.support_num)
+            # 查询集：仅使用真实样本（不含增强样本）
+            self.query_files.extend(data[self.support_num:])
             self.query_labels.extend([class_idx] * (len(data) - self.support_num))
+            # 增强：将 GAN/噪声样本追加到支持集
+            if self.aug_data is not None and self.augment_num > 0:
+                aug_for_class = self.aug_data[class_idx] if class_idx < len(self.aug_data) else None
+                if aug_for_class is not None and len(aug_for_class) > 0:
+                    n = min(self.augment_num, len(aug_for_class))
+                    indices = np.random.choice(len(aug_for_class), n, replace=False)
+                    self.support_files.extend(aug_for_class[indices])
+                    self.support_labels.extend([class_idx] * n)
 
 
 class MetaTask(BaseTask):
     """Meta-learning任务（Episode采样） - 用于MRN/MAML方法"""
 
     def __init__(self, character_folders: list, num_classes: int,
-                 support_num: int, query_num: int, seed: Optional[int] = None):
+                 support_num: int, query_num: int, seed: Optional[int] = None,
+                 aug_data: Optional[list] = None,
+                 augment_num: int = 0):
         super().__init__(character_folders, seed)
         self.num_classes = num_classes  # N-way
         self.support_num = support_num  # K-shot（支持集）
         self.query_num = query_num  # 查询集样本数
+        self.aug_data = aug_data      # list[ndarray|None], one per class (aligned with character_folders)
+        self.augment_num = augment_num
         self.support_files = []
         self.query_files = []
         self.support_labels = []
@@ -378,20 +394,31 @@ class MetaTask(BaseTask):
         if len(self.character_folders) < self.num_classes:
             self.num_classes = len(self.character_folders)
 
-        # 随机选择N个类别
-        sampled_classes = random.sample(self.character_folders, self.num_classes)
+        # 随机选择N个类别（同时跟踪原始索引以找到对应的增强数据）
+        all_indices = list(range(len(self.character_folders)))
+        sampled_indices = random.sample(all_indices, self.num_classes)
 
-        for class_idx, (data, label) in enumerate(sampled_classes):
+        for class_idx, orig_idx in enumerate(sampled_indices):
+            data, label = self.character_folders[orig_idx]
             data = self._shuffle_data(data)
-            # 支持集：前K个样本
+            # 支持集：前K个真实样本
             self.support_files.extend(data[:self.support_num])
-            # 查询集：接下来的query_num个样本
+            # 查询集：接下来的query_num个真实样本
             self.query_files.extend(
                 data[self.support_num:self.support_num + self.query_num]
             )
 
             self.support_labels.extend([class_idx] * self.support_num)
             self.query_labels.extend([class_idx] * self.query_num)
+
+            # 增强：将 GAN/噪声样本追加到支持集
+            if self.aug_data is not None and self.augment_num > 0:
+                aug_for_class = self.aug_data[orig_idx] if orig_idx < len(self.aug_data) else None
+                if aug_for_class is not None and len(aug_for_class) > 0:
+                    n = min(self.augment_num, len(aug_for_class))
+                    indices = np.random.choice(len(aug_for_class), n, replace=False)
+                    self.support_files.extend(aug_for_class[indices])
+                    self.support_labels.extend([class_idx] * n)
 
 
 # ========== 数据集类 ==========
@@ -544,7 +571,10 @@ def get_meta_loader(task: MetaTask, num_per_class: int,
     """获取Meta-learning任务的DataLoader - 使用平衡采样器"""
     files = task.support_files if split == 'support' else task.query_files
     labels = task.support_labels if split == 'support' else task.query_labels
-    num_instances = task.support_num if split == 'support' else task.query_num
+    # 增强后每类样本数可能不平衡（某些类 aug_data 为 None），取最大值确保覆盖
+    from collections import Counter
+    label_counts = Counter(labels)
+    num_instances = max(label_counts.values()) if label_counts else 0
 
     dataset = SignalDataset(files, labels, data_type, signal_length)
     sampler = BalancedSampler(

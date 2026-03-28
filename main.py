@@ -12,6 +12,7 @@ import sys
 import argparse
 import numpy as np
 import json
+import logging
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
@@ -22,6 +23,7 @@ from cGAN_condition import cGAN_Condition_Trainer
 from cGAN_constraint import cGAN_Constraint_Trainer
 from PCGAN import PcGAN_Trainer  # 新增导入
 from DTN_TEST import DTNTest, set_seed
+from config import GenerationConfig
 
 
 def check_preprocessing():
@@ -75,6 +77,149 @@ def aggregate_results(results_list, shot_configs):
     return aggregated
 
 
+def _prepare_aug_data(augment_type: str, metatest_data: list,
+                      Xg, yg, y_target_offset: int,
+                      augment_shot: int, noise_level: float) -> list:
+    """每类准备增强样本池，返回与 metatest_data 等长的列表（None 表示该类无增强）。
+
+    Args:
+        augment_type: 'none' | 'noise' | 'gan'
+        metatest_data: list[(data_array, label_str)]，本地类别索引顺序
+        Xg, yg: GAN 生成样本（全局标签），仅 augment_type='gan' 时使用
+        y_target_offset: 本地类别索引 + 偏移 = 全局标签（目标域测试时为 y_target.min()）
+        augment_shot: 增强后的目标总 shot 数
+        noise_level: 噪声标准差比例
+    Returns:
+        list[ndarray | None]，与 metatest_data 一一对应
+    """
+    if augment_type == 'none':
+        return []
+
+    aug_data = []
+    for local_idx, (real_data, _) in enumerate(metatest_data):
+        if augment_type == 'gan':
+            if Xg is None or yg is None:
+                aug_data.append(None)
+                continue
+            global_cls = local_idx + y_target_offset
+            mask = yg == global_cls
+            aug_data.append(Xg[mask].copy() if mask.any() else None)
+        elif augment_type == 'noise':
+            # 预生成大量噪声增强样本供各 episode 随机采样
+            n_pool = augment_shot * 20
+            std = float(np.std(real_data)) * noise_level
+            base_idx = np.random.choice(len(real_data), n_pool, replace=True)
+            base = real_data[base_idx].copy()
+            noise = np.random.normal(0, std, base.shape).astype(np.float32)
+            aug_data.append(base + noise)
+        else:
+            aug_data.append(None)
+    return aug_data
+
+
+def _npz_to_method_format(X: np.ndarray, y: np.ndarray) -> list:
+    """将 npz 格式的 (X, y) 转换为 methods 期待的 list[(data_array, label_str)] 格式。
+
+    每个元素对应一个类别：(data_array[N_cls, L], label_str)。
+    label_str 仅用于内部标识，实际训练标签由 Task 类的 enumerate 分配。
+    """
+    return [(X[y == cls], str(int(cls))) for cls in sorted(np.unique(y))]
+
+
+def _run_method_experiment(args, X_source, y_source, X_target, y_target,
+                           Xg=None, yg=None):
+    """使用模块化 trainer 运行 few-shot 实验，替代原 DTN_TEST 路径。"""
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s [%(name)s] %(levelname)s: %(message)s'
+    )
+
+    # 动态导入，避免在不需要时拉入 learn2learn
+    method_map = {
+        'dtn':   ('methods.dtn',   'DTNTrainer',  {}),
+        'ftn_u0': ('methods.ftn',  'FTNTrainer',  {'num_unfrozen_layers': 0}),
+        'ftn_u1': ('methods.ftn',  'FTNTrainer',  {'num_unfrozen_layers': 1}),
+        'ftn_u2': ('methods.ftn',  'FTNTrainer',  {'num_unfrozen_layers': 2}),
+        'ftn_u3': ('methods.ftn',  'FTNTrainer',  {'num_unfrozen_layers': 3}),
+        'ftn_u4': ('methods.ftn',  'FTNTrainer',  {'num_unfrozen_layers': 4}),
+        'mrn':   ('methods.mrn',   'MRNTrainer',  {}),
+        'maml':  ('methods.maml',  'MAMLTrainer', {}),
+    }
+
+    if args.method not in method_map:
+        raise ValueError(f"Unknown method '{args.method}'. Valid: {list(method_map)}")
+    module_path, class_name, extra_kwargs = method_map[args.method]
+    import importlib
+    module = importlib.import_module(module_path)
+    TrainerClass = getattr(module, class_name)
+
+    config = GenerationConfig(args)
+    os.makedirs(config.result_dir, exist_ok=True)
+
+    # 数据转换：npz (X, y) → list[(data, label_str)]
+    metatrain_data = _npz_to_method_format(X_source, y_source)   # 源域 6 类
+
+    if args.target_test:
+        # 目标域标签是全局索引 (6-9)，重映射为 0-3 方便 Task 类处理
+        y_target_offset = int(y_target.min())
+        y_target_local = y_target - y_target_offset
+        metatest_data = _npz_to_method_format(X_target, y_target_local)
+    else:
+        y_target_offset = 0
+        metatest_data = _npz_to_method_format(X_source, y_source)
+
+    # 准备增强数据（各类别的增强样本池，none 时为空列表）
+    aug_data = _prepare_aug_data(
+        augment_type=args.augment_type,
+        metatest_data=metatest_data,
+        Xg=Xg,
+        yg=yg,
+        y_target_offset=y_target_offset,
+        augment_shot=args.augment_shot,
+        noise_level=args.noise_level,
+    )
+
+    all_results = []
+    for run in range(args.num_runs):
+        print(f"\n========== 第 {run + 1}/{args.num_runs} 次运行 [{args.method}] ==========")
+        set_seed(config.training.random_seed + run * 100000)
+
+        trainer = TrainerClass(config, **extra_kwargs)
+        # 设置增强参数
+        if aug_data:
+            trainer.augment_type = args.augment_type
+            trainer.augment_shot = args.augment_shot
+            trainer.noise_level = args.noise_level
+            trainer.aug_data = aug_data
+        result = trainer.run_experiment(metatrain_data, metatest_data, run_id=run)
+        all_results.append(result)
+
+        run_file = os.path.join(
+            config.result_dir,
+            f"{args.method}_{args.augment_type}_{'target' if args.target_test else 'source'}_run{run + 1}.json"
+        )
+        with open(run_file, 'w') as f:
+            json.dump(result, f, indent=2, default=str)
+        print(f"第 {run + 1} 次结果已保存至 {run_file}")
+
+    # 聚合
+    aggregated = aggregate_results(all_results, args.shot_configs)
+    print(f"\n========== [{args.method}] 最终聚合结果 ==========")
+    for shot, stats in aggregated.items():
+        print(
+            f"{shot}: mean = {stats['mean_mean']:.4f} ± {stats['mean_std']:.4f} "
+            f"(原始 std 均值 = {stats['std_mean']:.4f})"
+        )
+
+    agg_file = os.path.join(
+        config.result_dir,
+        f"{args.method}_{args.augment_type}_{'target' if args.target_test else 'source'}_aggregated.json"
+    )
+    with open(agg_file, 'w') as f:
+        json.dump(aggregated, f, indent=2, default=str)
+    print(f"聚合结果已保存至 {agg_file}")
+
+
 def main():
     parser = argparse.ArgumentParser(description="项目主控脚本")
 
@@ -121,6 +266,14 @@ def main():
                         help='强制跳过预处理检查')
     parser.add_argument('--run_eval', action='store_true', default=True,
                         help='对 eval 版本执行生成质量评估（默认开启）')
+
+    # 方法调度：指定后跳过 DTN_TEST 路径，改用模块化 trainer
+    parser.add_argument('--method', type=str, default='none',
+                        choices=['none', 'dtn', 'ftn_u0', 'ftn_u1', 'ftn_u2',
+                                 'ftn_u3', 'ftn_u4', 'mrn', 'maml'],
+                        help='few-shot 方法（none=原 DTN_TEST 路径）')
+    parser.add_argument('--result_dir', type=str, default='./experiment_results',
+                        help='方法实验结果保存目录')
 
     args = parser.parse_args()
 
@@ -320,7 +473,13 @@ def main():
                 json.dump(metrics, f, indent=2)
             print(f"评估指标已保存至 {metrics_file}")
 
-    # ---------- DTN 测试 ----------
+    # ---------- 方法调度 ----------
+    if args.method != 'none':
+        _run_method_experiment(args, X_source, y_source, X_target, y_target,
+                               Xg=Xg, yg=yg)
+        return
+
+    # ---------- DTN 测试（原路径）----------
     # 准备测试数据：直接使用已全局归一化的信号，不再重复归一化
     X_test_scaled = X_test_real   # 已经是 [-1,1]
 

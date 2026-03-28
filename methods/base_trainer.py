@@ -59,6 +59,12 @@ class BaseTrainer(ABC):
             self.feature_dim = config.model.feature_dim
             self.adaptive_pool_size = config.model.cwru_adaptive_pool_size
 
+        # 增强参数（由外部调用方设置，默认不增强）
+        self.augment_type: str = 'none'
+        self.augment_shot: int = 0
+        self.noise_level: float = 0.05
+        self.aug_data: list = []   # list[ndarray | None]，与 metatest_data 类别顺序对齐
+
         # 记录配置信息
         self.logger.info(f"Data configuration: dataset={self.dataset_type}, task_type={self.task_type}")
         self.logger.info(f"  data_type={self.data_type}, signal_length={self.signal_length}")
@@ -84,6 +90,7 @@ class BaseTrainer(ABC):
     def run_experiment(self, metatrain_data: list, metatest_data: list,
                        run_id: int = 0) -> Dict[str, Any]:
         """运行完整实验（训练+测试） - 模板方法"""
+        self._run_id = run_id  # 供子类在 test() 中使用
         self.logger.info(f"Run {run_id + 1} started")
         self.logger.info(f"  Train classes: {self.num_classes_train}, Test classes: {self.num_classes_test}")
 
@@ -98,6 +105,10 @@ class BaseTrainer(ABC):
         test_results['run_id'] = run_id  # 标识运行次数
 
         return test_results
+
+    def _get_augment_num(self, shot: int) -> int:
+        """返回当前 shot 下需要补充的增强样本数。"""
+        return max(0, self.augment_shot - shot) if self.augment_shot > 0 else 0
 
     def _to_device(self, *tensors):
         """将张量移动到设备，并确保类型正确 - 实用工具方法"""
@@ -136,6 +147,9 @@ class EpisodeMetrics:
 
     def compute(self) -> Dict[str, Any]:
         """计算汇总统计 - 生成最终评估报告"""
+        if not self.accuracies:
+            return {'mean': 0.0, 'std': 0.0, 'max': 0.0, 'min': 0.0,
+                    'median': 0.0, 'all_values': []}
         acc_array = np.array(self.accuracies)
 
         results = {
